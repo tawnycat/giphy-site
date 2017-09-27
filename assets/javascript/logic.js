@@ -1,6 +1,6 @@
 // Array of subjects to start off with
 
-var topics = ["happy", "crying", "angry", "disgusted"];
+var topics = ["yes", "crying", "angry", "eww", "dead", "laughing", "no", "judging", "agree", "hearts", "idk"];
 
 // Loop that creates buttons from the array above
 
@@ -12,7 +12,7 @@ function renderButtons() {
 
 		var a = $("<button>");
 
-		a.addClass("gif-button");
+		a.addClass("gif-button btn btn-secondary m-2");
 
 		a.attr("data-name", topics[i]);
 
@@ -66,8 +66,10 @@ $.ajax({
 
     		reactionImage.attr("src", results[i].images.fixed_height_still.url);
 
-    		reactionDiv.append(p);
     		reactionDiv.append(reactionImage);
+    		reactionDiv.append(p);
+
+    		reactionDiv.addClass("float-left m-2");
 
     		$("#gif-view").prepend(reactionDiv);
 
