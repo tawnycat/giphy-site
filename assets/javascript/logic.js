@@ -56,26 +56,26 @@ $.ajax({
     	for (var i = 0; i < results.length; i++) {
 
 
-    		var emotionDiv = $("<div>");
+    		var reactionDiv = $("<div>");
 
     		var p = $("<p>").text("Rating: " + results[i].rating);
 
-    		var emotionImage = $("<img>");
+    		var reactionImage = $("<img>");
 
-    		emotionImage.addClass("gif");
+    		reactionImage.addClass("gif");
 
-    		emotionImage.attr("src", results[i].images.fixed_height_still.url);
+    		reactionImage.attr("src", results[i].images.fixed_height_still.url);
 
-    		emotionDiv.append(p);
-    		emotionDiv.append(emotionImage);
+    		reactionDiv.append(p);
+    		reactionDiv.append(reactionImage);
 
-    		$("#gif-view").prepend(emotionDiv);
+    		$("#gif-view").prepend(reactionDiv);
 
     	// Adds data attributes to make the gifs pauseable later
 
-    		emotionImage.attr("data-state", "still");
-    		emotionImage.attr("data-animate", results[i].images.fixed_height.url);
-    		emotionImage.attr("data-still", results[i].images.fixed_height_still.url);
+    	reactionImage.attr("data-state", "still");
+    	reactionImage.attr("data-animate", results[i].images.fixed_height.url);
+    	reactionImage.attr("data-still", results[i].images.fixed_height_still.url);
 
     }
 
@@ -106,3 +106,15 @@ function pauseGifs () {
 };
 
 // Have submissions create a button 
+
+$(document).on("click", "#add-reaction", function(event) {
+	event.preventDefault();
+
+	var reaction = $("#reaction-input").val().trim();
+
+	topics.push(reaction);
+
+	console.log(topics);
+
+	renderButtons();
+});
