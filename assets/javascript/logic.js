@@ -1,6 +1,6 @@
 // Array of subjects to start off with
 
-var topics = ["yes", "crying", "angry", "eww", "dead", "laughing", "no", "judging", "agree", "hearts", "idk"];
+var topics = ["yes", "crying", "angry", "eww", "dead", "laughing", "no", "judging", "agree", "high five", "idk"];
 
 // Loop that creates buttons from the array above
 
